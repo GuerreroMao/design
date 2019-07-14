@@ -1,7 +1,7 @@
 {
     "name": "PWAConf",
     "short_name": "PWAConf",
-    "start_url": "./?utem_source=web_app_manifest",
+    "start_url": "/",
     "display": "standalone",
     "scope":"/",
     "background_color": "#2A3443",
