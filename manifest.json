@@ -1,16 +1,18 @@
 {
     "name": "PWAConf",
     "short_name": "PWAConf",
-    "start_url": ".",
+    "start_url": "./?utem_source=web_app_manifest",
     "display": "standalone",
+    "scope":"/",
     "background_color": "#2A3443",
     "description": "A demo app for a fictional conference",
     "theme_color": "#2A3443",
     "icons": [
       {
-        "src": "./images/logo.jpg",
+        "src": "/images/logo.jpg",
         "sizes": "512x512",
         "type": "image/jpg"
       }
-    ]
+    ],
+    "lang":"es-MX"
   }
