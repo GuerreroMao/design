@@ -1,9 +1,11 @@
+;
 const CACHE_NAME = "v1_cache_programdor-fitnes",
 urlsToCache=[
     './',
     'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css',
     'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'
 ]
+
  self.addEventListener('install',e=>{
   e.waitUntil(
       caches.open(CACHE_NAME)
@@ -19,7 +21,7 @@ urlsToCache=[
     e.waitUntil(
         caches.keys()
         .then(cachesNames=>{
-            cachesNames.map(cacheName =>{
+            cacheNames.map(cacheName =>{
                 if(cacheWhitelist.indexOf(cacheName===-1)){
                     return caches.delete(cacheName)
                 }
