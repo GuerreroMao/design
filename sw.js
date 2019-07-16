@@ -1,4 +1,3 @@
-;
 const CACHE_NAME = "v1_cache_programdor-fitnes",
 urlsToCache=[
     './',
