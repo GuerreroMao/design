@@ -15,11 +15,14 @@
     <meta name="MobileOptimized" content="width">
     <meta name="HandheldFriendly" content="true">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+   
     <link rel="shortcut-icon" type="image/jpg" href="/design/images/logo.jpg">
-    <link rel="apple-touch-icon" href="">
+    
     <link rel="apple-touch-startup-image" href="">
     <link rel="manifest" href="/design/manifest.json">
+    <!--IOS Support-->
+    <link rel="apple-touch-icon" href="/design/images/icon-96x96.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
 </head>
 <body>
     <nav>
@@ -105,6 +108,7 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- <script src="script.js"></script> -->
+    <script src="/design/app.js"></script>
     <script type="text/Javascript">
         $(document).ready(function(){
             $('.sidenav').sidenav();
