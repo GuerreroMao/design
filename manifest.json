@@ -1,7 +1,7 @@
 {
-    "name": "Modelo",
-    "short_name": "Modelo",
-    "start_url": "/?utm_source=homescreen",
+    "name": "Hotel Modelo",
+    "short_name": "Hotel Modelo",
+    "start_url": "/index.html",
     "display": "standalone",
     "scope":"/",
     "background_color": "#2A3443",
