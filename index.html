@@ -106,8 +106,13 @@
         </div>
       </div>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="js/app.js"></script>
+    <!-- <script src="js/app.js"></script> -->
     <script type="text/Javascript">
+    if('serviceWorker' in navigator){
+        navigator.serviceWorker.register('js/sw.js')
+        .then((reg) => console.log('service worker registered',reg))
+        .catch((err) => console.log('service worker not registered',err));
+    }
         $(document).ready(function(){
             $('.sidenav').sidenav();
             $('.carousel.carousel-slider').carousel({
