@@ -11,3 +11,15 @@ self.addEventListener('activate',evt => {
 self.addEventListener('fetch',evt=>{
     console.log('fetch event',evt);
 })
+
+var deferredPrompt;
+
+        self.addEventListener('beforeinstallprompt', function (e) {
+          // Prevent Chrome 67 and earlier from automatically showing the prompt
+          e.preventDefault();
+          // Stash the event so it can be triggered later.
+          deferredPrompt = e;
+
+          showAddToHomeScreen();
+          alert('hola mundo');
+        });
