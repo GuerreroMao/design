@@ -116,23 +116,11 @@
               indicators: true
             });
         });
-        // if ( "serviceWorker" in navigator ) {
-
-        //   navigator.serviceWorker.register( "/design/sw.js" )
-        //     .then( function ( registration ) { // Registration was successful
-
-        //       console.log( "ServiceWorker registration successful with scope: ", registration.scope );
-
-        //     } ).catch( function ( err ) { // registration failed :(
-
-        //       console.error( "ServiceWorker registration failed: ", err );
-        //     } );
-
-        //   }
-
+        
         var deferredPrompt;
 
 window.addEventListener('beforeinstallprompt', function (e) {
+  alert(hola)
   // Prevent Chrome 67 and earlier from automatically showing the prompt
   e.preventDefault();
   // Stash the event so it can be triggered later.
