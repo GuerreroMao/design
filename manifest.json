@@ -2,7 +2,7 @@
     "name": "Hotel Modelo",
     "short_name": "Hotel Modelo",
     "display": "standalone",
-    "start_url": "design/index.html",
+    "start_url": "/design/index.html",
     "scope": "/",
     "background_color": "#2A3443",
     "description": "Ofrecemos las mejores habitaciones para vivir la mejor experiencia",
