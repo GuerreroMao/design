@@ -129,13 +129,13 @@
         });
         function showAddToHomeScreen() {
 
-var a2hsBtn = document.querySelector(".ad2hs-prompt");
+          var a2hsBtn = document.querySelector(".ad2hs-prompt");
 
-a2hsBtn.show();//.display = "block";
+          a2hsBtn.style.display="block";//.display = "block";
 
-a2hsBtn.addEventListener("click", addToHomeScreen);
+          a2hsBtn.addEventListener("click", addToHomeScreen);
 
-}
+          }
         function addToHomeScreen() {  var a2hsBtn = document.querySelector(".ad2hs-prompt");  // hide our user interface that shows our A2HS button
             a2hsBtn.style.display = 'none';  // Show the prompt
             deferredPrompt.prompt();  // Wait for the user to respond to the prompt
