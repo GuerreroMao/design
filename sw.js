@@ -3,7 +3,7 @@
  var currentCache= {
      offline:'offline-cache' + cacheVersion
  };
- const offlineUrl = 'offline-page.html';
+ const offlineUrl = 'offline.html';
 
 
 //install service worker
