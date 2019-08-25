@@ -1,21 +1,18 @@
- var cacheVersion = 1;
- var currentCache= {
-     offline:'offline-cache' + cacheVersion
- };
- const offlineUrl = 'offline.html';
-
-
+const staticCacheName = 'site-static';
+const assets = [
+    '/',
+    'index.html',
+    'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css',
+    '/design/images/logo.jpg',
+    'https://fonts.googleapis.com/icon?family=Material+Icons',
+];
 //install service worker
 self.addEventListener('install',evt => {
-    event.waitUntil(
-        caches.open(currentCache.offline).then(function(cache){
-            return cache.addAll([
-                'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css',
-                offlineUrl
-            ])
+    evt.waitUntil(
+        caches.open(staticCacheName).then(cache => {
+            cache.addAll(assets);
         })
-    )
-    console.log('create service worker install');
+    );
 });
 //activate event
 self.addEventListener('activate',evt => {
@@ -23,5 +20,9 @@ self.addEventListener('activate',evt => {
 });
 //fetch event
 self.addEventListener('fetch',evt=>{
-    //console.log('fetch event',evt);
+    evt.respondWith(
+        caches.match(evt.request).then(cacheRes => {
+            return cacheRes || fetch(evt.request);
+        })
+    );
 });
