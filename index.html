@@ -21,7 +21,10 @@
     <link rel="apple-touch-startup-image" href="">
     <link rel="manifest" href="/design/manifest.json">
     <!--IOS Support-->
-    <link rel="apple-touch-icon" href="/design/images/icon-96x96.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="PWA Clima">
+    <link rel="apple-touch-icon" href="/images/icons/icon-152x152.png">
     <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
 </head>
 <body>
@@ -104,7 +107,24 @@
         </div>
       </div>
     <script>
-        var deferredPrompt;
+        window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);
+        deferredInstallPrompt = evt;
+        installButton.removeAttribute('hidden');
+        deferredInstallPrompt.prompt();
+        // Hide the install button, it can't be called twice.
+        evt.srcElement.setAttribute('hidden', true);
+        deferredInstallPrompt.userChoice
+        .then((choice) => {
+          if (choice.outcome === 'accepted') {
+            console.log('User accepted the A2HS prompt', choice);
+          } else {
+            console.log('User dismissed the A2HS prompt', choice);
+          }
+          deferredInstallPrompt = null;
+        });
+        window.addEventListener('appinstalled', logAppInstalled);
+        console.log('Aplicación meteorológica fue instalada.', evt);
+        /*var deferredPrompt;
         window.addEventListener('beforeinstallprompt', function (e) {
           // Prevent Chrome 67 and earlier from automatically showing the prompt
           e.preventDefault();
@@ -138,7 +158,7 @@
             deferredPrompt = null;
 
           });
-        }
+        }*/
     </script>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>  
     <script src="js/app.js" type="text/JavaScript"></script>
