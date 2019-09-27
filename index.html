@@ -138,14 +138,14 @@
       // Detects if device is in standalone mode
       const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
 
-      // Checks if should display install popup notification:
-      if (isIos() && !isInStandaloneMode()) {
-        this.setState({ showInstallMessage: true });
-        alert('Este es el pop up');
-      }else{
-        alert('alertno');
-      }
-      function ipLookUp () {
+      // // Checks if should display install popup notification:
+      // if (isIos() && !isInStandaloneMode()) {
+      //   this.setState({ showInstallMessage: true });
+      //   alert('Este es el pop up');
+      // }else{
+      //   alert('alertno');
+      // }
+      function ipLookUp() {
       $.ajax('http://ip-api.com/json')
       .then(
           function success(response) {
