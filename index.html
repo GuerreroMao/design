@@ -145,6 +145,21 @@
       }else{
         alert('alertno');
       }
+      function ipLookUp () {
+      $.ajax('http://ip-api.com/json')
+      .then(
+          function success(response) {
+              console.log('User\'s Location Data is ', response);
+              console.log('User\'s Country', response.country);
+          },
+
+          function fail(data, status) {
+              console.log('Request failed.  Returned status of',
+                          status);
+          }
+      );
+    }
+    ipLookUp()
     </script>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>  
     <script src="js/app.js" type="text/JavaScript"></script>
