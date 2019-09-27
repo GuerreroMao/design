@@ -21,11 +21,16 @@
     <link rel="apple-touch-startup-image" href="">
     <link rel="manifest" href="/design/manifest.json">
     <!--IOS Support-->
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="PWA Clima">
-    <link rel="apple-touch-icon" href="/images/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" href="/images/icons/icon-152x152.png"> -->
     <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
+    <!-- place this in a head section -->
+  <link rel="apple-touch-icon" href="/images/icons/icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="touch-icon-iphone-retina.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="touch-icon-ipad-retina.png">
 </head>
 <body>
     <nav>
@@ -124,41 +129,6 @@
         });
         window.addEventListener('appinstalled', logAppInstalled);
         console.log('Aplicación meteorológica fue instalada.', evt);
-        /*var deferredPrompt;
-        window.addEventListener('beforeinstallprompt', function (e) {
-          // Prevent Chrome 67 and earlier from automatically showing the prompt
-          e.preventDefault();
-          // Stash the event so it can be triggered later.
-          deferredPrompt = e;
-          showAddToHomeScreen();
-          //btnAdd.style.display = 'block';
-        });
-
-        function showAddToHomeScreen() {
-          var a2hsBtn = document.querySelector(".ad2hs-prompt");
-          a2hsBtn.attr('style','display:block');//display = 'block';//.display = "block";
-          //a2hsBtn.style.display = "block";
-          a2hsBtn.addEventListener("click", addToHomeScreen);
-
-        } 
-        
-        function addToHomeScreen() {  
-            var a2hsBtn = document.querySelector(".ad2hs-prompt");  // hide our user interface that shows our A2HS button
-            a2hsBtn.style.display = 'none';  // Show the prompt
-            deferredPrompt.prompt();  // Wait for the user to respond to the prompt
-            deferredPrompt.userChoice
-              .then(function(choiceResult){
-
-            if (choiceResult.outcome === 'accepted') {
-              console.log('User accepted the A2HS prompt');
-            } else {
-              console.log('User dismissed the A2HS prompt');
-            }
-
-            deferredPrompt = null;
-
-          });
-        }*/
     </script>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>  
     <script src="js/app.js" type="text/JavaScript"></script>
