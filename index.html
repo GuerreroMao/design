@@ -112,6 +112,9 @@
         </div>
       </div>
     <script>
+      Notification.requestPermission(function(status) {
+          console.log('Notification permission status:', status);
+      });
         window.addEventListener('beforeinstallprompt', saveBeforeInstallPromptEvent);
         deferredInstallPrompt = evt;
         installButton.removeAttribute('hidden');
